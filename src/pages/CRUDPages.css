@@ -1,0 +1,553 @@
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.total-pending {
+  color: #667eea;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-top: 5px;
+}
+
+.add-btn {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.add-btn:hover {
+  transform: translateY(-2px);
+}
+
+.form-card {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+}
+
+.form-card h2 {
+  color: #667eea;
+  margin-bottom: 20px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 6px;
+  color: #333;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 2px solid #e0e0e0;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.form-group textarea {
+  resize: vertical;
+  font-family: inherit;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  margin-top: 10px;
+}
+
+.submit-btn:hover {
+  transform: translateY(-2px);
+}
+
+.items-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 20px;
+}
+
+.item-card {
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.item-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.item-card.rent-overdue {
+  border-left: 4px solid #f44336;
+}
+
+.item-card.rent-paid {
+  opacity: 0.8;
+  border-left: 4px solid #4caf50;
+}
+
+.item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.item-header h3 {
+  color: #333;
+  font-size: 1.3rem;
+  margin: 0;
+}
+
+.badge {
+  padding: 5px 12px;
+  border-radius: 15px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.badge.available,
+.badge.active,
+.badge.paid {
+  background: #d4edda;
+  color: #155724;
+}
+
+.badge.occupied,
+.badge.pending {
+  background: #fff3cd;
+  color: #856404;
+}
+
+.badge.maintenance,
+.badge.inactive,
+.badge.overdue {
+  background: #f8d7da;
+  color: #721c24;
+}
+
+.badge.partial {
+  background: #d1ecf1;
+  color: #0c5460;
+}
+
+.item-body {
+  margin-bottom: 15px;
+}
+
+.item-body p {
+  margin: 8px 0;
+  color: #555;
+  font-size: 0.95rem;
+}
+
+.item-body p strong {
+  color: #333;
+}
+
+.description {
+  font-style: italic;
+  color: #777 !important;
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid #f0f0f0;
+}
+
+.item-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.edit-btn,
+.delete-btn,
+.paid-btn {
+  flex: 1;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.edit-btn {
+  background: #2196F3;
+  color: white;
+}
+
+.edit-btn:hover {
+  background: #1976D2;
+}
+
+.delete-btn {
+  background: #f44336;
+  color: white;
+}
+
+.delete-btn:hover {
+  background: #d32f2f;
+}
+
+.paid-btn {
+  background: #4caf50;
+  color: white;
+}
+
+.paid-btn:hover {
+  background: #45a049;
+}
+
+.no-items {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 60px 20px;
+  color: #999;
+  font-size: 1.1rem;
+  background: white;
+  border-radius: 10px;
+}
+
+/* Rent Statistics */
+.rent-stats {
+  margin-top: 15px;
+  padding: 15px;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border-radius: 8px;
+  border-left: 4px solid #667eea;
+}
+
+.rent-stats h4 {
+  color: #667eea;
+  margin-bottom: 12px;
+  font-size: 1rem;
+}
+
+.stats-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.stat-label {
+  font-size: 0.85rem;
+  color: #666;
+  font-weight: 600;
+}
+
+.stat-amount {
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.stat-amount.total {
+  color: #2196f3;
+}
+
+.stat-amount.due {
+  color: #ff9800;
+}
+
+.stat-amount.paid {
+  color: #4caf50;
+}
+
+.stat-amount.remaining {
+  color: #f44336;
+}
+
+.overdue-warning {
+  margin-top: 10px;
+  margin-bottom: 5px;
+  padding: 8px;
+  background: #fff3cd;
+  color: #856404;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border-left: 3px solid #ffc107;
+}
+
+.entry-count {
+  font-size: 0.85rem;
+  color: #666;
+  margin-top: 8px;
+  font-style: italic;
+}
+
+.current-property {
+  background: #e8f5e9;
+  padding: 8px;
+  border-radius: 4px;
+  margin: 8px 0;
+}
+
+.property-rent {
+  color: #2e7d32;
+  font-weight: bold;
+}
+
+.no-property {
+  background: #fff3cd;
+  padding: 8px;
+  border-radius: 4px;
+  margin: 8px 0;
+}
+
+.not-assigned {
+  color: #856404;
+  font-style: italic;
+}
+
+/* Payment Breakdown */
+.payment-breakdown {
+  margin-top: 12px;
+  padding: 12px;
+  background: #f1f3f5;
+  border-radius: 6px;
+}
+
+.payment-breakdown p {
+  margin: 6px 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.amount-due {
+  color: #333;
+  font-weight: bold;
+}
+
+.amount-paid {
+  color: #4caf50;
+  font-weight: bold;
+}
+
+.amount-remaining {
+  color: #f44336;
+  font-weight: bold;
+}
+
+/* Monthly Rent Display */
+.monthly-rent {
+  font-size: 1.05rem;
+}
+
+.rent-amount {
+  color: #667eea;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+/* Header Stats for Rent Entries */
+.header-stats {
+  display: flex;
+  gap: 20px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+
+.header-stats .stat-item {
+  padding: 8px 16px;
+  background: #f8f9fa;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-left: 4px solid #667eea;
+}
+
+.header-stats .stat-item.paid {
+  border-left-color: #4caf50;
+  color: #4caf50;
+}
+
+.header-stats .stat-item.due {
+  border-left-color: #ff9800;
+  color: #ff9800;
+}
+
+/* Assign Tenant Button */
+.assign-btn {
+  flex: 1;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background: #9c27b0;
+  color: white;
+}
+
+.assign-btn:hover {
+  background: #7b1fa2;
+}
+
+/* Modal Styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  max-width: 500px;
+  width: 90%;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+.modal-content h2 {
+  color: #667eea;
+  margin-bottom: 20px;
+}
+
+.modal-info {
+  padding: 12px;
+  background: #f8f9fa;
+  border-radius: 6px;
+  margin-bottom: 15px;
+  color: #555;
+}
+
+.modal-info strong {
+  color: #667eea;
+}
+
+.modal-select {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #e0e0e0;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  margin-bottom: 20px;
+}
+
+.modal-select:focus {
+  outline: none;
+  border-color: #667eea;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.modal-actions .submit-btn {
+  flex: 2;
+  margin-top: 0;
+}
+
+.modal-actions .cancel-btn {
+  flex: 1;
+  padding: 14px;
+  background: #6c757d;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.modal-actions .cancel-btn:hover {
+  background: #5a6268;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .items-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .item-actions {
+    flex-direction: column;
+  }
+
+  .edit-btn,
+  .delete-btn,
+  .paid-btn {
+    width: 100%;
+  }
+  
+  .header-stats {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .stats-row {
+    grid-template-columns: 1fr;
+  }
+}

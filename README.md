@@ -1,6 +1,87 @@
-# Getting Started with Create React App
+# Rent Calculator - MERN Stack Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A full-stack rent management system built with MongoDB, Express.js, React, and Node.js.
+
+## Features
+
+### Backend (Node.js + Express + MongoDB)
+- **Authentication System**: JWT-based authentication with secure password hashing
+- **User Management**: Register, login, and user profile management
+- **Property Management**: CRUD operations for properties
+- **Tenant Management**: CRUD operations for tenants with emergency contacts
+- **Rent Entry Management**: Track rent payments, due dates, and payment status
+- **Statistics Dashboard**: Real-time statistics for pending, paid, and overdue rent
+
+### Frontend (React)
+- **Multi-page Application**: Dashboard, Properties, Tenants, Rent Entries pages
+- **Authentication**: Login and Registration pages with protected routes
+- **Responsive Design**: Mobile-friendly UI with gradient themes
+- **Real-time Updates**: Automatic calculation of total pending rent
+- **CRUD Operations**: Create, read, update, and delete functionality for all entities
+
+## Tech Stack
+
+- **Backend**: Node.js, Express.js, MongoDB, Mongoose, JWT, bcryptjs
+- **Frontend**: React 19, React Router DOM, Axios
+- **Database**: MongoDB
+
+## Installation & Setup
+
+### Prerequisites
+- Node.js (v14 or higher)
+- MongoDB installed and running locally
+- npm package manager
+
+### Step 1: Install Backend Dependencies
+```bash
+cd backend
+npm install
+```
+
+### Step 2: Install Frontend Dependencies
+```bash
+# From root directory
+npm install
+```
+
+### Step 3: Start MongoDB
+Make sure MongoDB is running:
+```bash
+# macOS with Homebrew
+brew services start mongodb-community
+
+# Or manually
+mongod
+```
+
+### Step 4: Run the Application
+
+**Terminal 1 (Backend):**
+```bash
+cd backend
+npm run dev
+```
+
+**Terminal 2 (Frontend):**
+```bash
+npm start
+```
+
+Frontend: http://localhost:3000  
+Backend API: http://localhost:5000
+
+## Troubleshooting
+
+### Port 5000 Already in Use
+```bash
+lsof -ti:5000
+kill -9 <PID>
+```
+
+### MongoDB Connection Error
+```bash
+brew services start mongodb-community
+```
 
 ## Available Scripts
 

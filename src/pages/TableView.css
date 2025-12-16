@@ -1,0 +1,376 @@
+/* Table View Styles */
+.table-container {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  margin-top: 20px;
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.data-table thead {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.data-table thead th {
+  padding: 16px 12px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.data-table tbody tr {
+  border-bottom: 1px solid #e0e0e0;
+  transition: all 0.2s ease;
+}
+
+.data-table tbody tr:hover {
+  background: #f8f9fa;
+  transform: scale(1.01);
+}
+
+.data-table tbody tr.row-overdue {
+  background: #fff3f3;
+}
+
+.data-table tbody tr.row-overdue:hover {
+  background: #ffe5e5;
+}
+
+.data-table tbody tr.row-paid {
+  opacity: 0.7;
+}
+
+.data-table tbody tr.row-partial {
+  background: #fff9e6;
+}
+
+.data-table tbody tr.row-partial:hover {
+  background: #fff3cc;
+}
+
+.data-table tbody td {
+  padding: 14px 12px;
+  color: #333;
+  vertical-align: middle;
+}
+
+.data-table tbody td.amount {
+  font-weight: 600;
+  font-family: 'Monaco', monospace;
+}
+
+.data-table tbody td.amount.paid {
+  color: #4caf50;
+}
+
+.data-table tbody td.amount.remaining {
+  color: #f44336;
+  font-weight: bold;
+}
+
+.data-table tbody td.actions {
+  white-space: nowrap;
+}
+
+/* Table Action Buttons */
+.data-table .btn-pay,
+.data-table .btn-edit,
+.data-table .btn-delete {
+  padding: 6px 12px;
+  margin: 0 4px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: all 0.2s ease;
+}
+
+/* Tenant Cell with Stats */
+.tenant-cell {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.tenant-name {
+  font-weight: 600;
+  color: #333;
+  font-size: 0.95rem;
+}
+
+.tenant-stats-inline {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  font-size: 0.8rem;
+  margin-top: 2px;
+}
+
+.tenant-stats-inline .stat-paid {
+  color: #4caf50;
+  font-weight: 600;
+  background: #e8f5e9;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.tenant-stats-inline .stat-remaining {
+  color: #f44336;
+  font-weight: 600;
+  background: #ffebee;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.tenant-stats-inline .stat-separator {
+  color: #999;
+  font-weight: normal;
+}
+
+/* Tenant Payment Summary Section */
+.tenant-payment-summary {
+  margin-top: 30px;
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.tenant-payment-summary h3 {
+  color: #667eea;
+  margin-bottom: 20px;
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.summary-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.tenant-summary-card {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border-radius: 10px;
+  padding: 20px;
+  border-left: 5px solid #667eea;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.tenant-summary-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.2);
+}
+
+.summary-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid #dee2e6;
+}
+
+.summary-header h4 {
+  color: #333;
+  font-size: 1.2rem;
+  margin: 0;
+  font-weight: 700;
+}
+
+.summary-header .entry-count {
+  background: #667eea;
+  color: white;
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.summary-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 15px;
+}
+
+.summary-stats .stat-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+  background: white;
+  border-radius: 6px;
+}
+
+.summary-stats .label {
+  color: #666;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.summary-stats .value {
+  font-weight: 700;
+  font-size: 1.1rem;
+  font-family: 'Monaco', monospace;
+}
+
+.summary-stats .value.total {
+  color: #2196f3;
+}
+
+.summary-stats .value.paid {
+  color: #4caf50;
+}
+
+.summary-stats .value.remaining {
+  color: #f44336;
+}
+
+.progress-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.progress-bar-small {
+  flex: 1;
+  height: 10px;
+  background: #e0e0e0;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.progress-fill-small {
+  height: 100%;
+  background: linear-gradient(90deg, #4caf50 0%, #66bb6a 100%);
+  transition: width 0.5s ease;
+  border-radius: 5px;
+}
+
+.progress-text {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #4caf50;
+  min-width: 60px;
+  text-align: right;
+}
+
+.data-table .btn-pay {
+  background: #4caf50;
+  color: white;
+  font-weight: 600;
+}
+
+.data-table .btn-pay:hover {
+  background: #45a049;
+  transform: translateY(-2px);
+}
+
+.data-table .btn-edit {
+  background: #2196f3;
+  color: white;
+}
+
+.data-table .btn-edit:hover {
+  background: #1976d2;
+}
+
+.data-table .btn-delete {
+  background: #f44336;
+  color: white;
+}
+
+.data-table .btn-delete:hover {
+  background: #d32f2f;
+}
+
+/* Payment Modal Specific Styles */
+.payment-modal {
+  max-width: 550px;
+}
+
+.payment-info {
+  background: #f8f9fa;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  border-left: 4px solid #667eea;
+}
+
+.payment-info p {
+  margin: 8px 0;
+  color: #555;
+}
+
+.payment-info .remaining-highlight {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 2px solid #e0e0e0;
+  font-size: 1.1rem;
+  color: #f44336;
+}
+
+.payment-info .remaining-highlight strong {
+  color: #f44336;
+}
+
+/* Tenant Info in Properties */
+.tenant-info {
+  background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+  padding: 12px;
+  border-radius: 6px;
+  margin-top: 10px;
+  border-left: 4px solid #4caf50;
+}
+
+.tenant-info p {
+  margin: 6px 0;
+  font-size: 0.9rem;
+  color: #2e7d32;
+}
+
+.tenant-info p strong {
+  color: #1b5e20;
+}
+
+/* Responsive Table */
+@media (max-width: 1200px) {
+  .data-table {
+    font-size: 0.85rem;
+  }
+  
+  .data-table thead th,
+  .data-table tbody td {
+    padding: 10px 8px;
+  }
+}
+
+@media (max-width: 968px) {
+  .table-container {
+    overflow-x: auto;
+  }
+  
+  .data-table {
+    min-width: 900px;
+  }
+}
+
+@media (max-width: 768px) {
+  .data-table .btn-pay,
+  .data-table .btn-edit,
+  .data-table .btn-delete {
+    padding: 4px 8px;
+    font-size: 0.75rem;
+    margin: 2px;
+  }
+}
