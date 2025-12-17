@@ -12,7 +12,7 @@ const app = express();
 
 // Middleware
 app.use(cors({
-  origin: ['http://localhost:3000', 'http://localhost:3001', 'https://rent-manager-a5vs-6rj4nvh8h-rinkaltailor8-stacks-projects.vercel.app', 'https://rent-manager-api-blond.vercel.app'],
+  origin: ['http://localhost:3000', 'http://localhost:3001', 'https://rent-manager-a5vs-6rj4nvh8h-rinkaltailor8-stacks-projects.vercel.app', 'https://rent-manager-by-rinkal-55hfhqnuc-rinkaltailor8-stacks-projects.vercel.app', 'https://rent-manager-api-blond.vercel.app'],
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization']
