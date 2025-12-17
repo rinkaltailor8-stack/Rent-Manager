@@ -12,7 +12,7 @@ const app = express();
 
 // ✅ CORS (PRODUCTION SAFE)
 const allowedOrigins = [
-  "https://rent-manager-by-rinkal-git-main-rinkaltailor8-stacks-projects.vercel.app"
+  "https://rent-manager-by-rinkal.vercel.app"
 ];
 
 app.use(cors({
