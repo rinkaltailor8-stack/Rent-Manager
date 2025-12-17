@@ -1,9 +1,7 @@
 import axios from 'axios';
 
-const API_URL = "https://rent-manager-api-blond.vercel.app" || "https://rent-manager-mocha.vercel.app" || 'https://rent-manager-api-blond.vercel.app/api';
-
 const api = axios.create({
-  baseURL: API_URL,
+  baseURL: "api/",
   headers: {
     'Content-Type': 'application/json'
   }
