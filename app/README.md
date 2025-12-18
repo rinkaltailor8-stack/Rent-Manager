@@ -62,6 +62,38 @@ npm start
 - Frontend: http://localhost:3000  
 - Backend API: http://localhost:8000
 
+## Deployment on Vercel
+
+### Environment Variables
+Before deploying, make sure to set these environment variables in your Vercel project settings:
+
+```
+MONGODB_URI=your_mongodb_atlas_connection_string
+JWT_SECRET=your_secure_jwt_secret_key
+NODE_ENV=production
+```
+
+### Deployment Steps
+
+1. **Connect to Vercel:**
+   - Push your code to GitHub
+   - Import your repository in Vercel
+   - Vercel will auto-detect the configuration from vercel.json
+
+2. **Set Environment Variables:**
+   - Go to Project Settings → Environment Variables
+   - Add MONGODB_URI, JWT_SECRET, and NODE_ENV
+
+3. **Deploy:**
+   - Vercel will automatically build and deploy
+   - Both frontend (React) and backend (API) will be served from the same domain
+
+### Important Notes
+- The API will be available at: `https://your-domain.vercel.app/api/*`
+- Frontend will be at: `https://your-domain.vercel.app/`
+- Make sure your MongoDB Atlas allows connections from anywhere (0.0.0.0/0) for Vercel
+- Update CORS allowed origins in `api/index.js` to include your Vercel domain
+
 ## Troubleshooting
 
 ### Port 5000 Already in Use

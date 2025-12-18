@@ -5,7 +5,7 @@
   "main": "server.js",
   "proxy": "http://localhost:8000",
   "scripts": {
-    "start": "react-scripts start && cd app && NODE_ENV=development node api/index.js",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "server": "node api/index.js",
     "dev": "nodemon api/index.js",

@@ -1,7 +1,8 @@
 import axios from 'axios';
 
+// Use relative path for both development and production
 const api = axios.create({
-  baseURL: "api/",
+  baseURL: "/api/",
   headers: {
     'Content-Type': 'application/json'
   }
