@@ -29,36 +29,27 @@ A full-stack rent management system built with MongoDB, Express.js, React, and N
 
 ### Prerequisites
 - Node.js (v14 or higher)
-- MongoDB installed and running locally
+- MongoDB Atlas account (already configured in .env)
 - npm package manager
 
-### Step 1: Install Backend Dependencies
+### Quick Start
+
+1. **Install Dependencies:**
 ```bash
-cd backend
 npm install
 ```
 
-### Step 2: Install Frontend Dependencies
+2. **Run the Application (Easy Method):**
 ```bash
-# From root directory
-npm install
+./start-local.sh
 ```
 
-### Step 3: Start MongoDB
-Make sure MongoDB is running:
-```bash
-# macOS with Homebrew
-brew services start mongodb-community
+This will start both the backend (port 5000) and frontend (port 3000) automatically.
 
-# Or manually
-mongod
-```
-
-### Step 4: Run the Application
+### Alternative: Manual Start
 
 **Terminal 1 (Backend):**
 ```bash
-cd backend
 npm run dev
 ```
 
@@ -67,8 +58,9 @@ npm run dev
 npm start
 ```
 
-Frontend: http://localhost:3000  
-Backend API: http://localhost:5000
+### Access the Application
+- Frontend: http://localhost:3000  
+- Backend API: http://localhost:8000
 
 ## Troubleshooting
 

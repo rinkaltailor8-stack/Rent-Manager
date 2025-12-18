@@ -10,9 +10,15 @@ const rentRoutes = require("./routes/rentRoutes");
 
 const app = express();
 
+// Increase header size limit to prevent 431 errors
+app.use(express.json({ limit: '50mb' }));
+app.use(express.urlencoded({ extended: true, limit: '50mb' }));
+
 // ✅ CORS (PRODUCTION SAFE)
 const allowedOrigins = [
-  "https://rent-manager-by-rinkal.vercel.app"
+  "https://rent-manager-by-rinkal.vercel.app",
+  "http://localhost:3000",
+  "http://localhost:8000"
 ];
 
 app.use(cors({
@@ -30,9 +36,6 @@ app.use(cors({
 }));
 
 app.options("*", cors());
-
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
 
 // ✅ MongoDB (reuse connection)
 let isConnected = false;
@@ -60,5 +63,13 @@ app.get("/api/health", (req, res) => {
   res.json({ status: "ok" });
 });
 
-// ❌ NO app.listen
+// Listen on port for local development
+if (process.env.NODE_ENV !== 'production') {
+  const PORT = process.env.PORT || 5000;
+  app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
+  });
+}
+
+// Export for Vercel
 module.exports = app;

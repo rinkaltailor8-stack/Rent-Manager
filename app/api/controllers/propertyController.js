@@ -1,6 +1,6 @@
-const Property = require('../../models/Property');
-const Tenant = require('../../models/Tenant');
-const RentEntry = require('../../models/RentEntry');
+const Property = require('../models/Property');
+const Tenant = require('../models/Tenant');
+const RentEntry = require('../models/RentEntry');
 
 // Helper function to generate rent entries for a tenant from move-in date
 const generateRentEntriesForTenant = async (tenantId, propertyId, ownerId) => {

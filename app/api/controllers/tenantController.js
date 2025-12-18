@@ -1,6 +1,6 @@
-const Tenant = require('../../models/Tenant');
-const RentEntry = require('../../models/RentEntry');
-const Property = require('../../models/Property');
+const Tenant = require('../models/Tenant');
+const RentEntry = require('../models/RentEntry');
+const Property = require('../models/Property');
 
 // Get all tenants for the logged-in user with rent statistics
 exports.getTenants = async (req, res) => {
@@ -138,7 +138,7 @@ exports.assignProperty = async (req, res) => {
     }
 
     // Validate property ownership
-    const Property = require('../../models/Property');
+    const Property = require('../models/Property');
     const property = await Property.findOne({ _id: propertyId, owner: req.userId });
     if (!property) {
       return res.status(404).json({ message: 'Property not found' });
