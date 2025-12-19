@@ -25,29 +25,29 @@ const allowedOrigins = [
 ];
 
 app.use(cors({
-  origin: function (origin, callback) {
-    // Allow requests with no origin (mobile apps, Postman, etc.)
+  origin: (origin, callback) => {
+  // Allow server-to-server / Postman / curl
     if (!origin) return callback(null, true);
-    
-    // Allow all Vercel preview deployments
-    if (origin.includes('.vercel.app')) {
+
+    // Allow Vercel preview & production deployments
+    if (origin.endsWith(".vercel.app")) {
       return callback(null, true);
     }
-    
-    // Allow specific origins
+
     if (allowedOrigins.includes(origin)) {
       return callback(null, true);
     }
-    
-    // Log rejected origins for debugging
-    console.log('CORS rejected origin:', origin);
-    callback(null, false);
+
+    console.error("❌ CORS blocked origin:", origin);
+    return callback(new Error("Not allowed by CORS"));
   },
   credentials: true,
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-  allowedHeaders: ["Content-Type", "Authorization"]
+  allowedHeaders: ["Content-Type", "Authorization"],
+  optionsSuccessStatus: 200
 }));
 
+// IMPORTANT: Handle preflight explicitly
 app.options("*", cors());
 
 // ✅ MongoDB (reuse connection)
